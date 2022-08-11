@@ -24,14 +24,44 @@
 
 .sidebar {
     display:grid;
+    grid-template-rows: 1fr 1fr 4fr;
     grid-area: sidebar;
-    background-color: rgb(255, 111, 135);
+    background-color:#e11d48;
     z-index:2;
 }
 
 .sidebar ul {
-    font-weight:900;
+    font-weight:bolder;
+    font-size:1.2rem;
     color:white;
+}
+
+
+
+.sidebar > div > ul > li {
+    margin-bottom:10px;
+}
+
+.dashtitle > img {
+    height:30px;
+    position:relative;
+    top:4px;
+    margin-right:5px;
+}
+
+.menu1 > ul > li > img {
+    height:30px;
+    position:relative;
+    top:4px;
+    margin-right:10px;
+}
+
+
+.menu2 > ul > li > img {
+    height:30px;
+    position:relative;
+    top:4px;
+    margin-right:8px;
 }
 
 .dashtitle {
@@ -39,17 +69,20 @@
     color:white;
     font-size:24px;
     justify-self: center;
+    align-self:center;
     
 }
 
 .menu1 ul {
-    display:grid;
-    gap:10px;
+    padding-left:40px;
+    margin-top:25px;
+    margin-bottom:50px;
 }
 
 .menu2 ul {
-    display:grid;
-    gap:20px;
+    padding-left:40px;
+    margin-top:25px;
+    margin-bottom:50px;
 }
 
 ul {
@@ -61,9 +94,8 @@ ul {
     /* display shadow on top */
     box-shadow: 0 4px 4px #ffe2e2;
     z-index:1;
-    /* display shadow on top */
-    grid-column: 2 / 4;
-    grid-template-columns: 2fr 1fr;
+    /*                       */
+    grid-template-columns: 2fr 1.5fr;
     grid-template-rows: 2fr 3fr ;
     /* define areas for simple placement */
     grid-template-areas:
@@ -79,47 +111,74 @@ ul {
     grid-template-columns: 1fr 8fr;
 }
 
-input[type=search] {
-    place-self:center;
+.searchbar > input {
+    font-size:1.3rem;
     border-radius: 25px;
     border:none;
     height:24px;
-    width: 500px;
+    width: 650px;
     background-color: rgb(235, 235, 235);
+    padding-left:20px;
+}
+
+.searchbar > img {
+    justify-self:end;
+    height:30px;
+    position: relative;
+    padding-right:10px;
 }
 
 .userinfo {
     display:grid;
-    justify-self:center;
-    border-radius:40%;
     grid-area:userinfo;
     grid-template-columns: 1fr .9fr 2fr;
     align-items:center;
+    justify-items: center;
+    padding-left:15px;
+    margin-right:50px;
+}
+
+.userinfo > img {
+    height:30px;
+}
+
+.userinfo > #bell {
+    justify-self:end;
 }
 
 .profile {
     display:flex;
     align-items:center;
     justify-content:center;
-    width:1em;
-    height:1em;
+    width:2.1em;
+    height:2.1em;
     padding:10px;
     border-radius: 50%;
+    border:2px solid black;
     font-size:24px;
+    background-color: #ffbb00;
 }
 
 .greet {
     display:grid;
     grid-area: greet;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 8fr;
     align-items:center;
 }
 
 .greet > .profile {
     justify-self:end;
-    margin-right:10px;
+    margin-right:15px;
     font-size:24px;
     padding:12px;
+}
+
+#user-greet > p {
+    font-weight:bolder;
+}
+
+#user-greet > h2 {
+    font-size:1.6rem;
 }
 
 .buttons {
@@ -127,6 +186,7 @@ input[type=search] {
     align-items:center;
     justify-content: center;
     grid-area:buttons;
+    padding: 10px 30px;
 }
 
 .buttons > ul {
@@ -135,13 +195,14 @@ input[type=search] {
 
 .buttons > ul > li > button {
     border-radius:15px;
-    background-color: rgb(255, 111, 135);
+    background-color: #be123c;
     color:white;
     border:none;
     width:96px;
     height:36px;
-    padding: 8px 32px;
+    padding: 8px 24px;
     margin-right:30px;
+    align-content: center;
     font-weight: bolder;
 }
 
@@ -162,10 +223,10 @@ input[type=search] {
 }
 
 
-.cards > .card {
+.card {
     display:grid;
     border-radius:10px;
-    height:170px;
+    height:200px;
     grid-template-rows: 4fr 1fr;
     font-weight: normal;
     font-size:16px;
@@ -182,9 +243,17 @@ input[type=search] {
     font-size:1.6rem;
 }
 
+
+
 .proj-buttons > ul {
     display:flex;
     justify-content:end;
+}
+
+.proj-buttons > ul > li {
+    padding:12px;
+    width:50px;
+
 }
 
 .projects .title {
@@ -214,9 +283,15 @@ input[type=search] {
 
 .a-cards {
     background-color: white;
-    padding:20px 25px;
+    padding:25px 35px;
     margin-bottom:40px;
 }
+
+.a-cards :nth-child(3) {
+    border:none;
+    margin-bottom:0px;
+}
+
 
 .trend-cards {
     background-color: white;
