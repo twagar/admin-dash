@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300&display=swap');
+
+
+
+*,
+::before,
+::after {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Red Hat Text', sans-serif;
+}
+
+
+.wrapper {
+    display:grid;
+    height:100vh;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+    display:grid;
+    grid-area: sidebar;
+    background-color: rgb(255, 111, 135);
+    z-index:2;
+}
+
+.sidebar ul {
+    font-weight:900;
+    color:white;
+}
+
+.dashtitle {
+    font-weight:bolder;
+    color:white;
+    font-size:24px;
+    justify-self: center;
+    
+}
+
+.menu1 ul {
+    display:grid;
+    gap:10px;
+}
+
+.menu2 ul {
+    display:grid;
+    gap:20px;
+}
+
+ul {
+    list-style:none;
+}
+
+.header {
+    display:grid;
+    /* display shadow on top */
+    box-shadow: 0 4px 4px #ffe2e2;
+    z-index:1;
+    /* display shadow on top */
+    grid-column: 2 / 4;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 3fr ;
+    /* define areas for simple placement */
+    grid-template-areas:
+    "searchbar userinfo"
+    "greet buttons";
+}
+
+.searchbar {
+    display:grid;
+    grid-area:searchbar;
+    justify-content: center;
+    align-items:center;
+    grid-template-columns: 1fr 8fr;
+}
+
+input[type=search] {
+    place-self:center;
+    border-radius: 25px;
+    border:none;
+    height:24px;
+    width: 500px;
+    background-color: rgb(235, 235, 235);
+}
+
+.userinfo {
+    display:grid;
+    justify-self:center;
+    border-radius:40%;
+    grid-area:userinfo;
+    grid-template-columns: 1fr .9fr 2fr;
+    align-items:center;
+}
+
+.profile {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:1em;
+    height:1em;
+    padding:10px;
+    border-radius: 50%;
+    font-size:24px;
+}
+
+.greet {
+    display:grid;
+    grid-area: greet;
+    grid-template-columns: 1fr 5fr;
+    align-items:center;
+}
+
+.greet > .profile {
+    justify-self:end;
+    margin-right:10px;
+    font-size:24px;
+    padding:12px;
+}
+
+.buttons {
+    display:grid;
+    align-items:center;
+    justify-content: center;
+    grid-area:buttons;
+}
+
+.buttons > ul {
+    display:flex;
+}
+
+.buttons > ul > li > button {
+    border-radius:15px;
+    background-color: rgb(255, 111, 135);
+    color:white;
+    border:none;
+    width:96px;
+    height:36px;
+    padding: 8px 32px;
+    margin-right:30px;
+    font-weight: bolder;
+}
+
+
+.main {
+    background-color: rgb(243, 243, 243);
+    display:grid;
+    grid-area:main;
+    padding: 20px;
+    grid-template-columns:3fr 1fr;
+}
+
+.cards {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:24px;
+}
+
+
+.cards > .card {
+    display:grid;
+    border-radius:10px;
+    height:170px;
+    grid-template-rows: 4fr 1fr;
+    font-weight: normal;
+    font-size:16px;
+    color:black;
+    padding:24px;
+    background-color: white;
+    border-left:7px solid rgb(255, 187, 0);
+}
+
+.projects > h2,
+.announcements > h2,
+.trending > h2 {
+    margin-bottom: 10px;
+    font-size:1.6rem;
+}
+
+.proj-buttons > ul {
+    display:flex;
+    justify-content:end;
+}
+
+.projects .title {
+    font-weight:bold;
+}
+
+.feed,
+.projects {
+    padding:12px;
+}
+
+.at {
+    font-weight: 700;
+}
+
+.a-cards {
+    background-color: white;
+    border-radius:15px;
+    padding:15px 20px;
+    margin-bottom:30px;
+}
+
+.a-cards > div {
+    border-bottom: 1px solid lightgrey;
+    margin-bottom:20px;
+}
+
+.a-cards {
+    background-color: white;
+    padding:20px 25px;
+    margin-bottom:40px;
+}
+
+.trend-cards {
+    background-color: white;
+    display:grid;
+    padding: 12px 24px;
+    grid-template-columns:1fr;
+    grid-template-rows: repeat(3, 1fr);
+    border-radius:15px;
+}
+
+.trend {
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+    padding:3px;
+    align-items:center;
+}
+
+.trend > .txt {
+    padding: 15px;
+    font-size:1rem;
+}
